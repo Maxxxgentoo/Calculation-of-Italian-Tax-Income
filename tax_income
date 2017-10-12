@@ -1,0 +1,143 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <float.h>
+
+float a,b,c,d,e,f,g,h,i,l,m,n,o,p,q,r,s,t,u,v,z,y,w,j,de,ac,aa,bb,cc,dd;
+char ace;
+
+int main ()
+{
+    char more;
+    printf("Vuoi avviare un calcolo? s/n ");
+    fflush(stdin);
+    scanf("%c", &more);
+    
+    if(more == 'N' || more == 'n') return 0;
+    printf("\n");
+    printf("CALCOLO UTILE FISCALE \n \n");
+    printf("Inserire importo utile civilistico: ");
+    scanf("%f", &a);
+    
+    printf("Reddito immobili non strumentali: ");
+    scanf("%f", &b);
+    
+    printf("Comp. amministr. non corrisposti entro l'anno: ");
+    scanf("%f", &c);
+    
+    printf("Int. passivi eccedenti il 30 per cento del ROL: ");
+    scanf("%f", &d);
+    
+    printf("Int. passivi inded. per maggiori prelevam. soci: ");
+    scanf("%f", &e);
+    
+    printf("Imposte indeducibili: ");
+    scanf("%f", &f);
+    
+    printf("Spese di rappresentanza oltre i limiti: ");
+    scanf("%f", &g);
+    
+    printf("Ripresa fiscale 25 per cento su spese ristoranti e alberghi: ");
+    scanf("%f", &h);
+    
+    printf("Bolli, assicuraz., manutenz. e carburanti auto deducibili al 20%: ");
+    scanf("%f", &i);
+    
+    printf("Ammortamento auto deducibili al 20 per cento: ");
+    scanf("%f", &l);
+    
+    printf("Leasing auto deducibili al 20 per cento: ");
+    scanf("%f", &m);
+    
+    printf("Telefono deducibile al 80 per cento: ");
+    scanf("%f", &n);
+    
+    printf("Altri costi indeducibili: ");
+    scanf("%f", &o);
+    
+    p = b + c + d + e + f + g + h + i + l + m + n + o;
+    
+    printf("\n");
+    printf("Totale variazioni in aumento: %.2f \n", p);
+    fflush(stdin);
+    
+    printf("\n");
+    printf("Comp. amministr. anni preced. pagati nell'anno: ");
+    scanf("%f", &q);
+    
+    printf("10 per cento Irap pagata 2014 deducibile: ");
+    scanf("%f", &r);
+    
+    printf("100 per cento Irap pagata 2014 costo stipendi: ");
+    scanf("%f", &s);
+    
+    printf("20 per cento IMU pagata 2014 su immobili strumentali: ");
+    scanf("%f", &t);
+    
+    printf("Bonus investimenti reg. a sopravv. attive: ");
+    scanf("%f", &u);
+    
+    printf("Altri ricavi non tassabili: ");
+    scanf("%f", &v);
+    
+    z = q + r +s + t + u + v;
+    
+    printf("\n");
+    printf("Totale variazioni in diminuzione: %.2f ", z);   
+    
+    y = a + p -z;
+    
+    printf("\n");
+    printf("UTILE FISCALE: euro %.2f ", y);
+    
+    printf("\n");
+    printf("Calcolo ACE");
+    
+    printf("\n");
+    printf("Societa' di capitali (S), societa' di persone (P) o Ditta individuale (D)?");
+    fflush(stdin);
+    scanf("%c", &ace);
+    
+    if(ace == 'S' || ace == 's')
+    {
+           printf("\n");
+           printf("Incrementi patrimoniali: ");
+           scanf("%f", &j);
+           printf("Decrementi patrimoniali: ");
+           scanf("%f", &de);
+           ac = (j - de) * 4 / 100;
+           printf("L'ACE e' pari a: %.2f ", ac);
+           }
+    
+    if(ace == 'P' || ace == 'p' || ace == 'D' || ace == 'd')
+    {
+           printf("\n");
+           printf("Capitale sociale e riserve: ");
+           scanf("%f", &w);
+           printf("Prelevamenti soci: ");
+           scanf("%f", &aa);
+           printf("Utile civilistico dell'anno: ");
+           scanf("%f", &bb);
+           printf("Perdite anni precedenti: ");
+           scanf("%f", &cc);
+           ac = (w - aa + bb - cc) * 4 / 100;
+           printf("L'ACE e' pari a: %.2f ", ac);
+           }
+           
+    if(ace == 'X')
+    {
+           system("PAUSE");
+           return 0;
+           }
+    
+           else
+           {
+           dd = y - ac;
+           printf("\n");
+           printf("UTILE FISCALE AL NETTO DI ACE: euro %.2f ", dd);
+           fflush(stdin);
+           printf("\n");
+    
+           system("PAUSE");
+           return 0;}
+}    
+    
